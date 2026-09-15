@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aarvi Superstores | things & things</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FFFFF0',
+            aarvigreen: '#2E8B57',
+            aarvipurple: '#6A0DAD',
+            darkbg: '#121212',
+            darkcard: '#1E1E1E'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Smooth reveal animation classes */
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .scroll-animate.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* To hide scrollbar but allow scrolling if needed */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-ivory dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans antialiased flex flex-col min-h-screen transition-colors duration-300">
+
+  <!-- Header / Navigation -->
+  <header class="bg-white/90 dark:bg-darkcard/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3 hover:opacity-80 transition cursor-pointer">
+        <img src="images/Icon.jpg" alt="Aarvi Logo" class="h-12 w-auto object-contain rounded-full shadow-sm" onerror="this.src='https://via.placeholder.com/48/6A0DAD/ffffff?text=A'">
+        <div>
+          <h1 class="text-2xl font-extrabold text-aarvigreen tracking-tight">aarvi</h1>
+          <p class="text-xs font-semibold text-aarvipurple dark:text-purple-400 uppercase tracking-wider hidden sm:block">super stores</p>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#departments" class="font-semibold hover:text-aarvipurple dark:hover:text-purple-400 transition">Departments</a>
+        <a href="#contact" class="font-semibold hover:text-aarvipurple dark:hover:text-purple-400 transition">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-black text-white overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="images/1.jpg" alt="Exterior" class="w-full h-full object-cover opacity-50">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40 flex flex-col items-center text-center scroll-animate">
+      
+      <!-- Heritage Badge -->
+      <span class="bg-aarvigreen text-white px-4 py-1 rounded-full text-sm font-bold tracking-widest uppercase shadow-lg mb-6">
+        Since 1992
+      </span>
+      
+      <!-- Main Typography (Fixed for one line on mobile) -->
+      <h2 class="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight mb-4 drop-shadow-xl text-ivory whitespace-nowrap">
+        things & things
+      </h2>
+      <p class="text-lg sm:text-xl md:text-2xl max-w-2xl text-gray-200 mb-10 drop-shadow-md font-medium px-4">
+        A real retail shopping experience in Raichur.
+      </p>
+      
+      <a href="#departments" class="bg-aarvipurple text-white px-8 py-4 rounded-full font-bold hover:bg-purple-800 hover:scale-105 hover:shadow-2xl transition-all duration-300">
+        Explore Departments
+      </a>
+    </div>
+  </section>
+
+  <!-- Departments Section (13 Items Grid) -->
+  <section id="departments" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 scroll-animate">
+      <h3 class="text-3xl md:text-4xl font-extrabold text-aarvigreen">Our Departments & Facilities</h3>
+      <div class="w-24 h-1.5 bg-aarvipurple mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <!-- Responsive Grid (1 col mobile, 2 col tablet, 3 col desktop) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- 1. Travel Bags -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate">
+        <div class="h-48 overflow-hidden">
+          <img src="images/15.jpg" alt="Travel Bags" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvigreen transition-colors">Travel bags</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Premium luggage and travel essentials ready for your next big journey.</p>
+        </div>
+      </div>
+
+      <!-- 2. Household Plastics -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate">
+        <div class="h-48 overflow-hidden">
+          <img src="images/3.jpg" alt="Household Plastics" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvipurple transition-colors">household plastics</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Durable storage solutions, containers, and everyday plasticware for your home.</p>
+        </div>
+      </div>
+
+      <!-- 3. Born Baby -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate">
+        <div class="h-48 overflow-hidden">
+          <img src="images/17.jpg" alt="Born Baby" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvigreen transition-colors">Born Baby</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Everything your little one needs. Soft clothing, safe toys, and infant care.</p>
+        </div>
+      </div>
+
+      <!-- 4. Decoration -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate">
+        <div class="h-48 overflow-hidden">
+          <img src="images/16.jpg" alt="Decoration" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvipurple transition-colors">Decoration</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Make every occasion memorable with festive party supplies and beautiful home decor.</p>
+        </div>
+      </div>
+
+      <!-- 5. Gifts -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate">
+        <div class="h-48 overflow-hidden">
+          <img src="images/8.jpg" alt="Gifts" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvigreen transition-colors">Gifts</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Find the perfect present for your loved ones with our unique gifting options.</p>
+        </div>
+      </div>
+
+      <!-- 6. Stationery -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate">
+        <div class="h-48 overflow-hidden">
+          <img src="images/18.jpg" alt="Stationery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvipurple transition-colors">Stationery</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">High-quality notebooks, art materials, and office supplies for work and creativity.</p>
+        </div>
+      </div>
+
+      <!-- 7. Steel Utensils -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate">
+        <div class="h-48 overflow-hidden">
+          <img src="images/10.jpg" alt="Steel Utensils" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvigreen transition-colors">Steel Utensils</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Premium stainless steel cookware and serving pieces built for everyday durability.</p>
+        </div>
+      </div>
+
+      <!-- 8. Kitchenware -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate">
+        <div class="h-48 overflow-hidden">
+          <img src="images/12.jpg" alt="Kitchenware" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvipurple transition-colors">Kitchenware</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Upgrade your cooking experience with our essential kitchen tools and accessories.</p>
+        </div>
+      </div>
+
+      <!-- 9. Handbag -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate">
+        <div class="h-48 overflow-hidden">
+          <img src="images/19.jpg" alt="Handbag" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvigreen transition-colors">Handbag</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Step out in style with our trendy and elegant collection of bags for every occasion.</p>
+        </div>
+      </div>
+
+      <!-- 10. Ladies Fashion Accessories -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate">
+        <div class="h-48 overflow-hidden">
+          <img src="images/7.jpg" alt="Ladies fashion accessories" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvipurple transition-colors">Ladies fashion accessories</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Complete your look with our selection of jewelry, hair accessories, and elegant add-ons.</p>
+        </div>
+      </div>
+
+      <!-- 11. Groceries -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate">
+        <div class="h-48 overflow-hidden">
+          <img src="images/20.jpg" alt="Groceries" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvigreen transition-colors">Groceries</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">High-quality daily essentials, snacks, and pantry staples for your family.</p>
+        </div>
+      </div>
+
+      <!-- 12. Games & Toys -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate">
+        <div class="h-48 overflow-hidden">
+          <img src="images/11.jpg" alt="Games & toys" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvipurple transition-colors">Games & toys</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Fun and educational toys, board games, and activities to keep kids entertained.</p>
+        </div>
+      </div>
+
+      <!-- 13. Parking Facility -->
+      <div class="bg-white dark:bg-darkcard rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col scroll-animate sm:col-span-2 lg:col-span-1">
+        <div class="h-48 overflow-hidden">
+          <img src="images/13.jpg" alt="Parking Facility" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h4 class="text-xl font-bold mb-2 group-hover:text-aarvigreen transition-colors">Parking Facility</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Ample, safe, and convenient parking space available for a hassle-free shopping experience.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Professional Footer -->
+  <footer id="contact" class="bg-white dark:bg-darkcard border-t border-gray-200 dark:border-gray-800 mt-auto transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left scroll-animate">
+      
+      <!-- Column 1: Brand & Contact -->
+      <div class="flex flex-col items-center md:items-start">
+        <h4 class="text-3xl font-black text-aarvigreen mb-2">aarvi</h4>
+        <p class="text-sm font-semibold text-aarvipurple dark:text-purple-400 uppercase tracking-widest mb-4">Unit of Sekar Paradise</p>
+        <a href="mailto:aarvisuperstores@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-aarvigreen dark:hover:text-aarvigreen transition flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          aarvisuperstores@gmail.com
+        </a>
+      </div>
+
+      <!-- Column 2: Location & Map -->
+      <div class="flex flex-col items-center md:items-start">
+        <h5 class="text-lg font-bold mb-4 text-gray-900 dark:text-white">Visit Our Store</h5>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          #4-6-32 Mangalwarpet,<br>
+          Raichur, Karnataka.
+        </p>
+        <a href="https://maps.app.goo.gl/W3Fw4gMdLAgVYuq4A?g_st=ac" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-5 py-2.5 rounded-lg hover:bg-aarvigreen hover:text-white dark:hover:bg-aarvigreen transition-all font-medium text-sm">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          Get Directions
+        </a>
+      </div>
+
+      <!-- Column 3: Social Media -->
+      <div class="flex flex-col items-center md:items-start">
+        <h5 class="text-lg font-bold mb-4 text-gray-900 dark:text-white">Connect With Us</h5>
+        <div class="flex gap-4">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/sekar_paradise_?stkn=MXJtaXB6cHRxbTdpag==" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-pink-600 hover:text-white transition-all text-gray-600 dark:text-gray-400 hover:-translate-y-1">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/share/1BRaxCv47S/" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-blue-600 hover:text-white transition-all text-gray-600 dark:text-gray-400 hover:-translate-y-1">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a href="https://youtube.com/@aarvi_superstores?si=VbQPoMg0Gh7znuZX" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-red-600 hover:text-white transition-all text-gray-600 dark:text-gray-400 hover:-translate-y-1">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="bg-gray-100 dark:bg-black py-6 text-center text-sm text-gray-500 font-medium">
+      &copy; 2026 Aarvi Superstores. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Smooth Scroll Reveal Animation Logic
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Staggered loading effect
+            setTimeout(() => {
+              entry.target.classList.add('is-visible');
+            }, 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1, // Trigger when 10% visible
+        rootMargin: "0px 0px -50px 0px" 
+      });
+      
+      document.querySelectorAll('.scroll-animate').forEach((el) => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
